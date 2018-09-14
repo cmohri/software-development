@@ -57,7 +57,6 @@ def csv_to_weighted_list(csv):
     for line in lines:
         row = parse_csv_row(line)
         add_weight(weights, row)
-    print( weights)
     return weights
 
 # Read 'occupations.csv' and return an occupation based on its weight
