@@ -1,4 +1,4 @@
-#Team Pancakes - Shafali Gupta and ClarAAa Mohri
+#Team Pancakes - Shafali Gupta and Clara Mohri
 #SoftDev pd07
 #K10 - Jinja Tuning
 #2018-09-24
@@ -81,8 +81,8 @@ def main():
 @app.route('/occupations')
 def home():
     return render_template('template.html',
-                           #job = main(),
-                           job= __init__.x(),
+                           job = main(),
+                           #job= __init__.x(),
                            diction = csv_to_weighted_list(read_file('data/occupations.csv')))
 
 app.debug = True
