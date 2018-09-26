@@ -1,4 +1,4 @@
-#Team Pancakes - Shafali Gupta and Clara Mohri
+#Team Pancakes - Shafali Gupta and ClarAAa Mohri
 #SoftDev pd07
 #K10 - Jinja Tuning
 #2018-09-24
@@ -7,7 +7,10 @@ from flask import Flask, render_template
 
 from random import random
 
+from util import __init__
+
 app = Flask(__name__)
+
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~OCCUPATIONS CODE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Returns the contents of the file with name `file`
@@ -73,14 +76,13 @@ def main():
 
 #~~~~~~~~~~~~~~~~~~END OCCUPATIONS CODE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-def read_lines(file):
-    with open(file) as f:
-        return f.readlines()
+
 
 @app.route('/occupations')
 def home():
     return render_template('template.html',
-                           job = main(),
+                           #job = main(),
+                           job= __init__.x(),
                            diction = csv_to_weighted_list(read_file('data/occupations.csv')))
 
 app.debug = True
