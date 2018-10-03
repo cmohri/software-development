@@ -1,7 +1,9 @@
-#Team Strawberry -- Vincent Lin, Clara Mohri
-#SoftDev pd7
-#K14 -- Do I Know You?
-#2018-10-01
+'''
+Team Strawberry -- Vincent Lin, Clara Mohri 
+SoftDev pd7  
+K15 -- Oh yes, perhaps I do...
+2018-10-02
+'''
 
 from flask import Flask, request, render_template, session, redirect, url_for, flash
 from os import urandom
@@ -31,7 +33,6 @@ def login():
         flash("Error: password is incorrect") 
         return render_template("error.html")
     elif users[request.form.get("username")] == request.form.get("password"):
-        flash("welcome")
         session["username"] = request.form.get("username")
         return redirect(url_for("index"))
     return render_template("login.html")

@@ -19,15 +19,17 @@ K15 -- Oh yes, perhaps I do...
       {% endblock %}
     </head>  
 
-    {% block body %}
     <body>	
+      {% block body %}
       Welcome, {{person}}
       <br>
       <form action = "/logout" method = "POST">
 	<input type = "submit" name = "logout" value = "Log Out">
       </form>
-      
+       {% endblock %}
+      {% block footer %}
+      <br>&copy; Team Strawberry
+      {% endblock %}   
     </body>
-    {% endblock %}
       
 </html>
