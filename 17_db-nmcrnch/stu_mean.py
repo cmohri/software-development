@@ -1,4 +1,4 @@
-#Clara Mohri
+#Clara Mohri, Shafali Gupta
 #SoftDev1 pd08
 #K17 -- Average
 #2018-10-07
@@ -49,21 +49,20 @@ def create_table():
     for i in c.fetchall():
         ide = str(i[0])
         avg = str(compute_avg(ide))
-        command = "INSERT INTO peeps_avg VALUES({0}, {1})".format(ide, avg)
-        c.execute(command)
+        params = (ide, avg)
+        c.execute("INSERT INTO peeps_avg VALUES(?, ?)", params)
     
 create_table()
 
 #display each student's name, id, and average
 def display(id):
     retList = []
-    command = "SELECT name from peeps where id =\"{}\"".format(str(id))
-    c.execute(command)
+    params = (str(id),)
+    c.execute("SELECT name from peeps where id = ?", params)
     for i in c.fetchall():
         name = i[0]
         retList.append(name)
-    command = "SELECT id, avg from peeps_avg where id = {0}".format(str(id))
-    c.execute(command)
+    c.execute("SELECT id, avg from peeps_avg where id = ?", params)
     for i in c.fetchall():
         retList.append(i[0])
         retList.append(i[1])
@@ -77,8 +76,8 @@ print(display(100))
 #Facilitate adding rows to the courses table
 def add_courses(code, mark, id):
     strcode = "'" + code + "'"
-    command = "INSERT INTO courses VALUES({0}, {1}, {2})".format(strcode, str(mark), str(id))
-    c.execute(command)
+    params = (strcode, str(mark), str(id))
+    c.execute("INSERT INTO courses VALUES(?, ?, ?)", params)
 
 '''
 add_courses("art", 92, 11)
