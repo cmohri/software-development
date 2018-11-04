@@ -1,0 +1,34 @@
+body{
+    background-color: #A9A9A9;
+}
+#color{
+    background-color: #D3D3D3;
+}
+h1{
+    text-align: center;
+    color: #FFFFFF;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+#text{
+    background-color: #708090;
+    }
+a{
+    color: #FFFFFF;
+}
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    text-decoration: underline;
+}
+#copyright{
+    background-color: #808080;
+    text-align: right;
+    color: #D3D3D3;
+}
