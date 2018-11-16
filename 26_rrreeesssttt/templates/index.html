@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+      <h1>Merriam Webster's Dictionary API</h1>
+      <!--
+      <p>{{ data[0] }} </p>-->
+      <p> Word: {{data[0]['meta']['id']}} </p>
+      <p> Stems: 
+      {% for i in data[0]['meta']['stems'] %}
+      {{i}}
+      {% endfor %}
+      </p>
+      <p>Definitions:
+	<ul>
+	  {% for i in data[0]['shortdef'] %}
+	  <li>{{i}} </li>
+	  {% endfor %}</p>
+      </ul>
+
+      
+      <h1>Chuck Norris Joke</h1>
+      <i>Here's a Chuck Norris joke from the Chuck Norris Joke API:</i>
+      <p>{{data_['value']['joke']}}</p>
+
+      <h1>Image from Pixabay API</h1>
+      <p><i>An image of nature</i></p>
+      <img src = {{ d['hits'][0]['largeImageURL']}} width = 50%></img>
+      
+
+	
+    </body>
+</html>
