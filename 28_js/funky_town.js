@@ -1,3 +1,4 @@
+// recursive function for returning nth number in the fibonacci sequence
 var fibonacci = (n) => {
     if (n < 2){
         return n;
@@ -5,26 +6,47 @@ var fibonacci = (n) => {
     return fibonacci (n-1) + fibonacci(n-2);
 }
 
+/ **************
+ gcd returns the greatest common denominator for ints a, b
+ This method uses Euclid's algorithm to find GCD recursively.                
+ First, the larger and smaller inputs are identified.  
+ If either is equal to 0, then 0 is returned. 
+ If large is divisible by small, then small is returned      
+ Otherwise, large becomes largest - small and the gcdER of these two integers
+ is called.
+*************** /
 var gcd = (a, b) =>{
-    var ctr = 1;
-    var gcd= 0; 
-    var min;
-    
-    if (a < b){
-        min = a;
+    var large = max(a, b);
+    var small = min(a, b);
+    if (small == 0){
+        return 0;
     }
-    else{
-        min = b;
-    }    
-    while (ctr <= min){
-     
-        if (a%ctr == 0 && b%ctr == 0){
-            gcd = ctr;
-        }
-        ctr += 1;
+    if (large %small == 0){
+        return small;}
+    else {
+            large = large - small;
+        return gcd(large, small);
     }
-    return gcd;
 }
+
+// helper function return max of a and b
+var max = (a, b) => {
+    if (a > b){
+	return a;
+    }
+    return b;
+}
+
+// helper function returns min of a and b
+var min = (a, b) => {
+    if (a < b){
+	return a;
+    }
+    return b;
+}
+
+
+// function for returning random 
 var randomStudent = () =>{
     var students = ['jerry','clara','jason'];
     var index = Math.floor((Math.random() * students.length));
