@@ -6,7 +6,7 @@ var fibonacci = (n) => {
     return fibonacci (n-1) + fibonacci(n-2);
 }
 
-/ **************
+/**************
  gcd returns the greatest common denominator for ints a, b
  This method uses Euclid's algorithm to find GCD recursively.                
  First, the larger and smaller inputs are identified.  
@@ -14,7 +14,7 @@ var fibonacci = (n) => {
  If large is divisible by small, then small is returned      
  Otherwise, large becomes largest - small and the gcdER of these two integers
  is called.
-*************** /
+***************/
 var gcd = (a, b) =>{
     var large = max(a, b);
     var small = min(a, b);
