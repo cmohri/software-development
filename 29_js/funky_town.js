@@ -31,12 +31,10 @@ var gcd = (a, b) =>{
 
 // helper function return max of a and b
 var max = (a, b) => {
-    console.log("hello")
     if (a > b){
 	return a;
     }
-    return b;
-    
+    return b;    
 }
 
 // helper function returns min of a and b
@@ -55,5 +53,32 @@ var randomStudent = () =>{
     return students[index];
 }
 
+//button for random name
+var dasbut = document.getElementById("b");
+dasbut.addEventListener("click", function(){    
+    var name = randomStudent()
+    // display result on page
+    var p_tag = document.getElementById("results");
+    p_tag.innerHTML = "random name: " + name;
+    console.log(name);
+})
 
+//button for gcd of 4 and 16
+var dasbut1 = document.getElementById("a");
+dasbut1.addEventListener("click", function(){
+    // display result on page 
+    var p_tag = document.getElementById("results");
+    p_tag.innerHTML = "gcd of 4 and 16: "
+    p_tag.innerHTML += gcd(4, 16);
+    console.log(gcd(4, 16));
+})
+
+//button for fourth element of fibonacci sequence
+var dasbut2 = document.getElementById("c");
+dasbut2.addEventListener("click", function(){
+    // display result on page 
+    var p_tag = document.getElementById("results");
+    p_tag.innerHTML = "4th number in fibonaccci sequence: "+fibonacci(4);
+    console.log(fibonacci(4));
+})
 
