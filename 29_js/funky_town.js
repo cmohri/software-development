@@ -81,4 +81,3 @@ dasbut2.addEventListener("click", function(){
     p_tag.innerHTML = "4th number in fibonaccci sequence: "+fibonacci(4);
     console.log(fibonacci(4));
 })
-
